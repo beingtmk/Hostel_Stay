@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- master stylesheet -->
+    <link rel="stylesheet" href="css/master.css">
+
+    <title>Hostel Stay Form</title>
+  </head>
+  <body>
+    <h1>Vacation Stay Form</h1>
+
+    <!-- stay form -->
+    <form class="container needs-validation" id="form1" novalidate>
+
+      <!-- Name of student -->
+      <div class="form-group">
+        <label for="InputName">Name</label>
+        <input type="text" class="form-control" id="InputName" placeholder="Enter your Name" required>
+      </div>
+
+      <!-- Roll number and Hostel -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="InputRollNumber">Roll Number</label>
+            <input type="number" class="form-control" id="InputRollNumber" placeholder="Enter Your Roll Number" required>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="InputHostel">Hostel</label>
+            <select class="form-control" id="InputHostel">
+              <option>Barak</option>
+              <option>Brahmaputra</option>
+              <option>Dhansiri</option>
+              <option>Dibang</option>
+              <option>Dihing</option>
+              <option>Kameng</option>
+              <option>Kapili</option>
+              <option>Lohit</option>
+              <option>Manas</option>
+              <option>Married Scholar</option>
+              <option>Siang</option>
+              <option>Subhansiri</option>
+              <option>Umiam</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Webmail and Room Number-->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="InputWebmail">Webmail</label>
+            <input type="email" class="form-control" id="InputWebmail" placeholder="Enter Webmail Id" required>
+            <small id="emailHelp" class="form-text text-muted">@iitg.ac.in</small>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="InputRoom">Room Number</label>
+            <input type="text" class="form-control" id="InputRoom" placeholder="Enter Your Room Number" required>
+          </div>
+        </div>
+      </div>
+
+    <!-- Mobile Number -->
+    <div class="form-group">
+      <label for="InputMobile">Mobile Number</label>
+      <input type="number" class="form-control" id="InputMobile" placeholder="Enter Your Mobile Number" required>
+    </div>
+
+    <!-- Duration of Stay -->
+    <div id="duration">
+      <h5>Duration of Stay</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="InputFrom">FROM</label>
+            <input type="date" class="form-control" id="InputFrom" required>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="InputTo">TO</label>
+            <input type="date" class="form-control" id="InputTo" required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Purpose">Purpose Of Stay:</label>
+      <textarea class="form-control" rows="5" id="Purpose" required></textarea>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="Check1" required>
+      <label class="form-check-label" for="Check1">I am aware that mere submission of this application doesn’t ensure accommodation.</label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    </form>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Form Successfully Submitted</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Summary:</h6>
+
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <td id="tname">placeholder</td>
+                </tr>
+
+                <tr>
+                  <th>Roll Number</th>
+                  <td id="troll">placeholder</td>
+                </tr>
+
+                <tr>
+                  <th>Webmail</th>
+                  <td id="twebmail">placeholder</td>
+                </tr>
+
+                <tr>
+                  <th>Hostel</th>
+                  <td id="thostel">placeholder</td>
+                </tr>
+
+                <tr>
+                  <th>Room Number</th>
+                  <td id="troom">placeholder</td>
+                </tr>
+
+                <tr>
+                  <th>Mobile Number</th>
+                  <td id="tmobile">placeholder</td>
+                </tr>
+
+                <tr>
+                  <th>Stay Duration</th>
+                  <td id="tstay">placeholder</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="refresh()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/master.js"></script>
+
+  </body>
+</html>
